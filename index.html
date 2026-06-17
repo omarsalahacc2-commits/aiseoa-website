@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <meta name="description" content="Omar Salah — SEO Specialist helping businesses in Europe, Australia & worldwide rank higher on Google."/>
+  <meta property="og:title" content="aiseoa — SEO Specialist | Rank Higher. Grow Faster."/>
+  <meta property="og:description" content="Data-driven SEO strategies for businesses in Europe, Australia & beyond."/>
+  <title>aiseoa — SEO Specialist | Rank Higher. Grow Faster.</title>
+  <link rel="stylesheet" href="css/style.css"/>
+  <style>
+    /* ── HERO ── */
+    .hero { padding: 5.5rem 2.5rem 4rem; max-width: 960px; margin: 0 auto; text-align: center; }
+    .hero h1 { font-size: clamp(2.6rem,6vw,4rem); font-weight: 700; line-height: 1.08; letter-spacing: -2px; margin-bottom: 1.2rem; }
+    .hero h1 em { color: var(--accent2); font-style: normal; }
+    .hero > p { color: var(--muted); font-size: 1.1rem; max-width: 600px; margin: 0 auto 2.2rem; }
+    .hero-btns { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+    .typed-cursor { display: inline-block; width: 3px; height: .9em; background: var(--accent2); animation: blink .8s infinite; margin-left: 2px; vertical-align: text-bottom; }
+    @keyframes blink { 0%,100%{opacity:1}50%{opacity:0} }
+
+    /* ── STATS ── */
+    .stats-bar { background: var(--navy2); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); padding: 1.5rem 2.5rem; display: flex; justify-content: center; gap: 3.5rem; flex-wrap: wrap; }
+    .stat-num { font-family: 'Space Grotesk',sans-serif; font-size: 2rem; font-weight: 700; }
+    .stat-num .val { color: var(--accent2); }
+    .stat-label { font-size: .78rem; color: var(--muted); margin-top: 2px; font-weight: 500; }
+
+    /* ── SERVICES ── */
+    .services-grid { display: grid; grid-template-columns: repeat(auto-fit,minmax(260px,1fr)); gap: 1.2rem; }
+    .svc-icon { width: 44px; height: 44px; background: rgba(37,99,235,.15); border-radius: 10px; display: flex; align-items: center; justify-content: center; margin-bottom: 1rem; font-size: 1.3rem; }
+    .svc-title { font-family: 'Space Grotesk',sans-serif; font-weight: 600; font-size: 1rem; margin-bottom: .4rem; }
+    .svc-desc { color: var(--muted); font-size: .85rem; line-height: 1.6; }
+    .svc-price { display: inline-block; margin-top: .8rem; font-size: .78rem; font-weight: 700; color: var(--accent2); background: rgba(37,99,235,.1); padding: .25rem .7rem; border-radius: 999px; }
+
+    /* ── AI SEO SECTION ── */
+    .ai-section { background: linear-gradient(135deg,rgba(37,99,235,.12) 0%,rgba(56,189,248,.08) 100%); border: 1px solid var(--border); border-radius: 20px; padding: 3rem; margin: 0 2.5rem; max-width: 960px; margin: 0 auto; }
+    .ai-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; align-items: center; }
+    .ai-features { display: flex; flex-direction: column; gap: .8rem; margin-top: 1.5rem; }
+    .ai-feature { display: flex; gap: .8rem; align-items: flex-start; }
+    .ai-dot { width: 8px; height: 8px; background: var(--accent2); border-radius: 50%; margin-top: 6px; flex-shrink: 0; }
+    .ai-feature p { font-size: .88rem; color: var(--muted); line-height: 1.5; }
+    .ai-feature strong { color: var(--white); display: block; font-size: .9rem; margin-bottom: 2px; }
+    .ai-visual { background: var(--card); border: 1px solid var(--border); border-radius: 14px; padding: 1.5rem; font-family: monospace; font-size: .8rem; color: var(--accent2); line-height: 1.8; }
+    .ai-visual .comment { color: var(--muted); }
+
+    /* ── RESULTS ── */
+    .results-grid { display: grid; grid-template-columns: repeat(auto-fit,minmax(200px,1fr)); gap: 1.2rem; }
+    .result-card { background: var(--card); border: 1px solid var(--border); border-radius: 14px; padding: 1.5rem; text-align: center; }
+    .result-num { font-family: 'Space Grotesk',sans-serif; font-size: 2.4rem; font-weight: 700; color: var(--accent2); }
+    .result-label { color: var(--muted); font-size: .82rem; margin-top: .3rem; }
+    .testimonials { display: grid; grid-template-columns: repeat(auto-fit,minmax(270px,1fr)); gap: 1.2rem; margin-top: 2rem; }
+    .testi { background: var(--card); border: 1px solid var(--border); border-radius: 14px; padding: 1.5rem; }
+    .stars { color: #FBBF24; margin-bottom: .6rem; }
+    .testi-text { color: #C8D8F0; font-size: .88rem; line-height: 1.65; font-style: italic; margin-bottom: 1rem; }
+    .testi-author { display: flex; align-items: center; gap: .7rem; }
+    .avatar { width: 36px; height: 36px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: .82rem; flex-shrink: 0; }
+
+    /* ── PROCESS ── */
+    .process-steps { display: flex; flex-direction: column; }
+    .step { display: flex; gap: 1.5rem; padding: 1.5rem 0; border-bottom: 1px solid var(--border); }
+    .step:last-child { border: none; }
+    .step-num { font-size: 2.5rem; font-weight: 900; color: rgba(37,99,235,.22); min-width: 60px; line-height: 1; font-family: 'Space Grotesk',sans-serif; }
+    .step h3 { font-size: 1.05rem; font-weight: 600; margin-bottom: .3rem; }
+    .step p { color: var(--muted); font-size: .87rem; line-height: 1.6; }
+
+    /* ── BOOKING / ORDER FORM ── */
+    .booking-section { background: var(--navy2); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); padding: 4.5rem 2.5rem; }
+    .booking-inner { max-width: 960px; margin: 0 auto; }
+    .booking-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2.5rem; margin-top: 2.5rem; }
+    .service-selector { display: grid; grid-template-columns: 1fr 1fr; gap: .8rem; }
+    .service-opt { background: rgba(255,255,255,.04); border: 1px solid var(--border); border-radius: 10px; padding: 1rem; cursor: pointer; transition: all .2s; }
+    .service-opt:hover { border-color: var(--accent2); }
+    .service-opt.selected { border-color: var(--accent); background: rgba(37,99,235,.12); }
+    .service-opt h4 { font-size: .88rem; font-weight: 600; margin-bottom: 3px; }
+    .service-opt .price { font-size: .8rem; color: var(--accent2); font-weight: 700; }
+    .service-opt .desc { font-size: .75rem; color: var(--muted); margin-top: 3px; }
+    .booking-form { display: flex; flex-direction: column; gap: .9rem; }
+    .booking-form input, .booking-form textarea, .booking-form select {
+      background: rgba(255,255,255,.05); border: 1px solid var(--border); border-radius: 8px;
+      padding: .75rem 1rem; color: var(--white); font-size: .88rem; font-family: inherit; outline: none; transition: border-color .2s;
+    }
+    .booking-form input:focus, .booking-form textarea:focus, .booking-form select:focus { border-color: var(--accent2); }
+    .booking-form input::placeholder, .booking-form textarea::placeholder { color: var(--muted); }
+    .booking-form select option { background: var(--navy2); }
+    .booking-form textarea { resize: vertical; min-height: 80px; }
+    .price-preview { background: rgba(37,99,235,.1); border: 1px solid rgba(37,99,235,.3); border-radius: 10px; padding: 1rem; margin-top: .5rem; }
+    .price-preview h4 { font-size: .85rem; color: var(--muted); margin-bottom: .3rem; }
+    .price-preview .total { font-family: 'Space Grotesk',sans-serif; font-size: 1.6rem; font-weight: 700; color: var(--accent2); }
+    .price-preview .note { font-size: .75rem; color: var(--muted); margin-top: .3rem; }
+    .submit-btn { background: var(--accent); color: #fff; border: none; padding: .9rem; border-radius: 8px; font-weight: 700; font-size: .95rem; cursor: pointer; transition: background .2s; font-family: inherit; }
+    .submit-btn:hover { background: #1d4ed8; }
+    .confirm-msg { display: none; background: rgba(34,197,94,.1); border: 1px solid rgba(34,197,94,.3); color: #4ADE80; padding: 1rem; border-radius: 8px; text-align: center; font-size: .9rem; }
+
+    /* ── HOURS ── */
+    .hours-wrapper { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; align-items: start; }
+    .status-badge-wrap { margin-bottom: 1rem; }
+
+    /* ── BLOG PREVIEW ── */
+    .blog-grid { display: grid; grid-template-columns: repeat(auto-fit,minmax(270px,1fr)); gap: 1.2rem; }
+    .blog-card { background: var(--card); border: 1px solid var(--border); border-radius: 14px; overflow: hidden; transition: all .25s; cursor: pointer; }
+    .blog-card:hover { border-color: rgba(56,189,248,.4); transform: translateY(-4px); }
+    .blog-thumb { height: 160px; display: flex; align-items: center; justify-content: center; font-size: 3rem; }
+    .blog-body { padding: 1.2rem; }
+    .blog-tag { font-size: .72rem; font-weight: 700; color: var(--accent2); text-transform: uppercase; letter-spacing: 1px; margin-bottom: .4rem; }
+    .blog-title { font-family: 'Space Grotesk',sans-serif; font-size: .95rem; font-weight: 600; line-height: 1.4; margin-bottom: .4rem; }
+    .blog-date { font-size: .75rem; color: var(--muted); }
+
+    @media(max-width:768px){
+      .ai-grid { grid-template-columns: 1fr; }
+      .booking-grid { grid-template-columns: 1fr; }
+      .service-selector { grid-template-columns: 1fr; }
+      .hours-wrapper { grid-template-columns: 1fr; }
+      .hero { padding: 3.5rem 1.2rem 3rem; }
+      .hero h1 { letter-spacing: -1px; }
+      .stats-bar { gap: 1.5rem; }
+    }
+  </style>
+</head>
+<body>
+<script src="js/components.js"></script>
+<script>injectNav('home');</script>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="badge"><span class="badge-dot"></span> <span id="avail-text">Available for new clients</span></div>
+  <h1 id="hero-h1">Rank Higher.<br>Grow <em id="typed-text"></em><span class="typed-cursor"></span> Faster.</h1>
+  <p id="hero-sub">I help businesses in Europe, Australia & beyond dominate Google with data-driven SEO strategies that generate real, measurable growth.</p>
+  <div class="hero-btns">
+    <a class="btn-primary" href="#booking" id="cta-audit">Get a Free SEO Audit</a>
+    <a class="btn-outline" href="portfolio.html" id="cta-work">View Our Work</a>
+  </div>
+</section>
+
+<!-- STATS -->
+<div class="stats-bar">
+  <div class="stat"><div class="stat-num"><span class="val" id="c1">0</span>+</div><div class="stat-label" id="sl1">Clients Worldwide</div></div>
+  <div class="stat"><div class="stat-num"><span class="val" id="c2">0</span>%</div><div class="stat-label" id="sl2">Avg. Traffic Increase</div></div>
+  <div class="stat"><div class="stat-num">#<span class="val" id="c3">0</span></div><div class="stat-label" id="sl3">Google Rankings</div></div>
+  <div class="stat"><div class="stat-num"><span class="val" id="c4">0</span>+</div><div class="stat-label" id="sl4">Keywords Ranked</div></div>
+</div>
+
+<!-- SERVICES -->
+<section class="section fade-in" id="services">
+  <div class="section-tag" id="svc-tag">What We Do</div>
+  <div class="section-title" id="svc-title">SEO Services That Actually Work</div>
+  <div class="section-sub" id="svc-sub">No fluff. No shortcuts. Just proven strategies that push your website to page 1 and keep it there.</div>
+  <div class="services-grid">
+    <div class="card"><div class="svc-icon">🔍</div><div class="svc-title">Technical SEO Audit</div><div class="svc-desc">Deep-dive audits covering Core Web Vitals, crawl errors, indexing & site architecture.</div><span class="svc-price">From $299</span></div>
+    <div class="card"><div class="svc-icon">📝</div><div class="svc-title">Content Strategy</div><div class="svc-desc">Keyword research + content plans that attract the right audience and convert them.</div><span class="svc-price">From $199/mo</span></div>
+    <div class="card"><div class="svc-icon">🔗</div><div class="svc-title">Link Building</div><div class="svc-desc">High-authority backlinks using white-hat methods — sustainable and Google-approved.</div><span class="svc-price">From $399/mo</span></div>
+    <div class="card"><div class="svc-icon">📍</div><div class="svc-title">Local SEO</div><div class="svc-desc">Dominate Google Maps and local search in your target cities across Europe & Australia.</div><span class="svc-price">From $249/mo</span></div>
+    <div class="card"><div class="svc-icon">🤖</div><div class="svc-title">AI-Powered SEO</div><div class="svc-desc">Leveraging AI tools to automate audits, generate optimized content & scale results faster.</div><span class="svc-price">From $499/mo</span></div>
+    <div class="card"><div class="svc-icon">🌍</div><div class="svc-title">International SEO</div><div class="svc-desc">Hreflang, geo-targeting & multilingual optimization for global market expansion.</div><span class="svc-price">From $599/mo</span></div>
+  </div>
+</section>
+
+<!-- AI & SEO SECTION -->
+<section class="section fade-in" id="ai-seo" style="padding-top:0">
+  <div class="ai-section">
+    <div class="ai-grid">
+      <div>
+        <div class="section-tag">AI + SEO</div>
+        <div class="section-title" style="font-size:1.7rem">The Future of SEO<br>Is Already Here</div>
+        <div class="ai-features">
+          <div class="ai-feature"><span class="ai-dot"></span><div><strong>AI Content at Scale</strong><p>Generate SEO-optimized content 10x faster using advanced AI tools, without losing quality.</p></div></div>
+          <div class="ai-feature"><span class="ai-dot"></span><div><strong>Automated Technical Audits</strong><p>AI-powered crawlers detect issues instantly — errors fixed before they impact rankings.</p></div></div>
+          <div class="ai-feature"><span class="ai-dot"></span><div><strong>Predictive Keyword Research</strong><p>AI models predict keyword trends before they peak — giving you first-mover advantage.</p></div></div>
+          <div class="ai-feature"><span class="ai-dot"></span><div><strong>Smart Competitor Analysis</strong><p>Real-time competitor monitoring with AI-generated gap reports and action plans.</p></div></div>
+        </div>
+      </div>
+      <div class="ai-visual">
+        <span class="comment"># AI SEO Audit Report</span><br>
+        ✅ Core Web Vitals: <span style="color:#4ADE80">PASSED</span><br>
+        ✅ Mobile Score: <span style="color:#4ADE80">98/100</span><br>
+        ⚡ Keywords Found: <span style="color:#FBBF24">1,240</span><br>
+        🔗 Backlinks: <span style="color:#60A5FA">+340 this month</span><br>
+        📈 Ranking Velocity: <span style="color:#4ADE80">↑ 34%</span><br>
+        🤖 AI Content Score: <span style="color:#4ADE80">A+</span><br>
+        <br>
+        <span class="comment"># Recommendations:</span><br>
+        → Fix 3 crawl errors<br>
+        → Target 12 new keywords<br>
+        → Build 8 authority links<br>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- RESULTS -->
+<section class="stripe fade-in">
+  <div class="section" id="results" style="padding-top:3.5rem;padding-bottom:3.5rem">
+    <div class="section-tag">Real Results</div>
+    <div class="section-title">Numbers That Speak</div>
+    <div class="results-grid">
+      <div class="result-card"><div class="result-num">+340%</div><div class="result-label">Organic Traffic — E-commerce UK</div></div>
+      <div class="result-card"><div class="result-num">#1</div><div class="result-label">Google Rankings for Competitive KWs</div></div>
+      <div class="result-card"><div class="result-num">4.2x</div><div class="result-label">ROI from SEO Investment</div></div>
+      <div class="result-card"><div class="result-num">6 mo</div><div class="result-label">Average Time to Page 1</div></div>
+    </div>
+    <div class="testimonials">
+      <div class="testi"><div class="stars">★★★★★</div><div class="testi-text">"Our organic traffic tripled in 5 months. We now rank #1 for our main keywords in Australia."</div><div class="testi-author"><div class="avatar" style="background:rgba(37,99,235,.2);color:#60A5FA">JM</div><div><div style="font-weight:600;font-size:.88rem">James M.</div><div style="color:var(--muted);font-size:.78rem">CEO, Melbourne SaaS Co.</div></div></div></div>
+      <div class="testi"><div class="stars">★★★★★</div><div class="testi-text">"Fixed years of technical issues in weeks. Our European rankings shot up immediately."</div><div class="testi-author"><div class="avatar" style="background:rgba(20,184,166,.2);color:#2DD4BF">SP</div><div><div style="font-weight:600;font-size:.88rem">Sophie P.</div><div style="color:var(--muted);font-size:.78rem">Marketing Dir., Germany</div></div></div></div>
+      <div class="testi"><div class="stars">★★★★★</div><div class="testi-text">"We grew from 2k to 18k monthly visitors in under a year. Exceptional work."</div><div class="testi-author"><div class="avatar" style="background:rgba(168,85,247,.2);color:#C084FC">RT</div><div><div style="font-weight:600;font-size:.88rem">Reza T.</div><div style="color:var(--muted);font-size:.78rem">Founder, London Agency</div></div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section class="section fade-in" id="process">
+  <div class="section-tag">How It Works</div>
+  <div class="section-title">A Clear, Proven Process</div>
+  <div class="section-sub">Four structured steps — from audit to scale — designed to maximize your results.</div>
+  <div class="process-steps">
+    <div class="step"><div class="step-num">01</div><div><h3>Free SEO Audit</h3><p>I analyze your website, competitors & keyword opportunities — giving you a clear picture of where you stand.</p></div></div>
+    <div class="step"><div class="step-num">02</div><div><h3>Custom Strategy</h3><p>A tailored roadmap covering technical fixes, content plan & link strategy — built for your specific market.</p></div></div>
+    <div class="step"><div class="step-num">03</div><div><h3>Implementation</h3><p>Precision execution — on-page optimization, technical improvements, content creation & outreach.</p></div></div>
+    <div class="step"><div class="step-num">04</div><div><h3>Track, Report & Scale</h3><p>Monthly transparent reports with ranking movements, traffic growth & ROI. We double down on what works.</p></div></div>
+  </div>
+</section>
+
+<!-- BOOKING / ORDER SYSTEM -->
+<section class="booking-section fade-in" id="booking">
+  <div class="booking-inner">
+    <div class="section-tag" id="book-tag">Apply for a Service</div>
+    <div class="section-title" id="book-title">Request Your SEO Service</div>
+    <div class="section-sub" id="book-sub">Select a service, fill in your details & submit. You'll receive a confirmation email with next steps — no commitment required.</div>
+    <div class="booking-grid">
+      <!-- Service Selector -->
+      <div>
+        <p style="font-size:.85rem;font-weight:600;color:var(--muted);margin-bottom:.8rem;text-transform:uppercase;letter-spacing:1px">1. Choose a Service</p>
+        <div class="service-selector" id="service-selector">
+          <div class="service-opt selected" data-price="0" data-service="Free SEO Audit" onclick="selectService(this)">
+            <h4>Free Audit</h4>
+            <div class="price">$0 — Free</div>
+            <div class="desc">Full website SEO review</div>
+          </div>
+          <div class="service-opt" data-price="299" data-service="Technical SEO" onclick="selectService(this)">
+            <h4>Technical SEO</h4>
+            <div class="price">From $299</div>
+            <div class="desc">One-time full audit + fixes</div>
+          </div>
+          <div class="service-opt" data-price="399" data-service="Link Building" onclick="selectService(this)">
+            <h4>Link Building</h4>
+            <div class="price">From $399/mo</div>
+            <div class="desc">Authority backlinks monthly</div>
+          </div>
+          <div class="service-opt" data-price="199" data-service="Content Strategy" onclick="selectService(this)">
+            <h4>Content Strategy</h4>
+            <div class="price">From $199/mo</div>
+            <div class="desc">Keywords + content plan</div>
+          </div>
+          <div class="service-opt" data-price="499" data-service="AI-Powered SEO" onclick="selectService(this)">
+            <h4>AI SEO Package</h4>
+            <div class="price">From $499/mo</div>
+            <div class="desc">AI tools + full management</div>
+          </div>
+          <div class="service-opt" data-price="599" data-service="Full SEO Management" onclick="selectService(this)">
+            <h4>Full Management</h4>
+            <div class="price">From $599/mo</div>
+            <div class="desc">Everything included</div>
+          </div>
+        </div>
+        <div class="price-preview" style="margin-top:1rem">
+          <h4 id="preview-label">Selected Service</h4>
+          <div class="total" id="preview-price">Free</div>
+          <div class="note" id="preview-note">✓ No commitment — we'll review your website first</div>
+        </div>
+        <!-- Working Hours -->
+        <div style="margin-top:1.5rem">
+          <p style="font-size:.85rem;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:1px;margin-bottom:.8rem">Working Hours</p>
+          <div class="status-badge-wrap" id="open-status"></div>
+          <div class="hours-grid" id="hours-grid"></div>
+        </div>
+      </div>
+      <!-- Form -->
+      <div>
+        <p style="font-size:.85rem;font-weight:600;color:var(--muted);margin-bottom:.8rem;text-transform:uppercase;letter-spacing:1px">2. Your Details</p>
+        <div class="booking-form">
+          <input type="text" id="b-name" placeholder="Full Name *"/>
+          <input type="email" id="b-email" placeholder="Email Address *"/>
+          <input type="text" id="b-website" placeholder="Your Website URL *"/>
+          <input type="text" id="b-country" placeholder="Country (UK, AU, DE, SA...)"/>
+          <select id="b-budget">
+            <option value="" disabled selected>Monthly Budget Range</option>
+            <option>Under $500/mo</option>
+            <option>$500 – $1,000/mo</option>
+            <option>$1,000 – $3,000/mo</option>
+            <option>$3,000+/mo</option>
+          </select>
+          <textarea id="b-msg" placeholder="Tell me about your goals, current challenges, target market..."></textarea>
+          <button class="submit-btn" onclick="submitBooking()">Submit & Get Confirmation →</button>
+          <div class="confirm-msg" id="confirm-msg">
+            ✅ Thank you! Your request has been received.<br>
+            <strong>Please allow 24–48 hours for us to review your website.</strong><br>
+            A confirmation email is on its way.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BLOG PREVIEW -->
+<section class="section fade-in" id="blog">
+  <div class="section-tag">From the Blog</div>
+  <div class="section-title">Latest SEO Insights</div>
+  <div class="section-sub">Tips, strategies & case studies to help you grow your organic traffic.</div>
+  <div class="blog-grid">
+    <a class="blog-card" href="blog.html">
+      <div class="blog-thumb" style="background:linear-gradient(135deg,rgba(37,99,235,.2),rgba(56,189,248,.15))">🤖</div>
+      <div class="blog-body"><div class="blog-tag">AI & SEO</div><div class="blog-title">How AI is Changing SEO in 2025 — What You Need to Know</div><div class="blog-date">Coming Soon</div></div>
+    </a>
+    <a class="blog-card" href="blog.html">
+      <div class="blog-thumb" style="background:linear-gradient(135deg,rgba(20,184,166,.15),rgba(56,189,248,.1))">🔗</div>
+      <div class="blog-body"><div class="blog-tag">Link Building</div><div class="blog-title">10 White-Hat Link Building Strategies That Still Work in 2025</div><div class="blog-date">Coming Soon</div></div>
+    </a>
+    <a class="blog-card" href="blog.html">
+      <div class="blog-thumb" style="background:linear-gradient(135deg,rgba(168,85,247,.15),rgba(37,99,235,.1))">📊</div>
+      <div class="blog-body"><div class="blog-tag">Technical SEO</div><div class="blog-title">Core Web Vitals 2025: The Complete Guide to Passing Google's Test</div><div class="blog-date">Coming Soon</div></div>
+    </a>
+  </div>
+  <div style="text-align:center;margin-top:2rem"><a class="btn-outline" href="blog.html">View All Posts →</a></div>
+</section>
+
+<script src="js/aiseoa.js"></script>
+<script>
+injectFooter();
+
+// Typed
+initTyped('typed-text',
+  ['Organic Traffic','Your Revenue','Brand Authority','Global Reach'],
+  ['الترافيك','إيراداتك','مكانتك الرقمية','السوق العالمي']
+);
+
+// Count up
+setTimeout(()=>{
+  countUp('c1',47,1200); countUp('c2',280,1500);
+  countUp('c3',1,800); countUp('c4',850,1400);
+},400);
+
+// Working hours
+renderHours('hours-grid');
+const openEl = document.getElementById('open-status');
+if(openEl) openEl.innerHTML = isOpenNow()
+  ? '<span class="open-badge"><span style="width:6px;height:6px;background:#22C55E;border-radius:50%;display:inline-block"></span> Open Now</span>'
+  : '<span class="closed-badge">Currently Closed</span>';
+
+// Booking
+let selectedService = { name:'Free SEO Audit', price:0 };
+function selectService(el){
+  document.querySelectorAll('.service-opt').forEach(e=>e.classList.remove('selected'));
+  el.classList.add('selected');
+  selectedService.name = el.dataset.service;
+  selectedService.price = parseInt(el.dataset.price);
+  document.getElementById('preview-label').textContent = el.dataset.service;
+  document.getElementById('preview-price').textContent = selectedService.price === 0 ? 'Free' : 'From $'+selectedService.price;
+  document.getElementById('preview-note').textContent = selectedService.price === 0
+    ? '✓ No commitment — we\'ll review your website first'
+    : '✓ Final price discussed after website review';
+}
+function submitBooking(){
+  const name=document.getElementById('b-name').value.trim();
+  const email=document.getElementById('b-email').value.trim();
+  const website=document.getElementById('b-website').value.trim();
+  if(!name||!email||!website){alert('Please fill in Name, Email & Website URL.');return;}
+  // TODO: Replace with Formspree/EmailJS endpoint
+  // fetch('https://formspree.io/f/YOUR_ID',{method:'POST',body:JSON.stringify({name,email,website,service:selectedService.name})})
+  document.getElementById('confirm-msg').style.display='block';
+  document.getElementById('b-name').value='';
+  document.getElementById('b-email').value='';
+  document.getElementById('b-website').value='';
+  document.getElementById('b-country').value='';
+  document.getElementById('b-msg').value='';
+}
+
+// Page translations
+function applyPageTranslations(lang){
+  const t = {
+    en:{ avail:'Available for new clients', cta1:'Get a Free SEO Audit', cta2:'View Our Work', svcTag:'What We Do', svcTitle:'SEO Services That Actually Work', bookTag:'Apply for a Service', bookTitle:'Request Your SEO Service' },
+    ar:{ avail:'متاح لعملاء جدد', cta1:'احصل على تدقيق مجاني', cta2:'شاهد أعمالنا', svcTag:'ماذا نقدم', svcTitle:'خدمات SEO تحقق نتائج فعلية', bookTag:'قدّم على خدمة', bookTitle:'اطلب خدمة SEO' }
+  };
+  const d=t[lang];
+  document.getElementById('avail-text').textContent=d.avail;
+  document.getElementById('cta-audit').textContent=d.cta1;
+  document.getElementById('cta-work').textContent=d.cta2;
+  document.getElementById('svc-tag').textContent=d.svcTag;
+  document.getElementById('svc-title').textContent=d.svcTitle;
+  document.getElementById('book-tag').textContent=d.bookTag;
+  document.getElementById('book-title').textContent=d.bookTitle;
+  if(lang==='ar'){ document.getElementById('hero-h1').innerHTML='تصدّر جوجل.<br>انمُ <em id="typed-text"></em><span class="typed-cursor"></span> أسرع.'; }
+  else { document.getElementById('hero-h1').innerHTML='Rank Higher.<br>Grow <em id="typed-text"></em><span class="typed-cursor"></span> Faster.'; }
+  initTyped('typed-text',['Organic Traffic','Your Revenue','Brand Authority','Global Reach'],['الترافيك','إيراداتك','مكانتك الرقمية','السوق العالمي']);
+  renderHours('hours-grid');
+}
+</script>
+</body>
+</html>
